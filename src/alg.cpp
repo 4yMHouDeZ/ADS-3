@@ -37,7 +37,7 @@ unsigned int seqCollatz(unsigned int *maxlen,
       else n = 3 * n + 1;
       counter++;
     }
-    if (*maxlen < counter & counter <= rbound & counter >= lbound) {
+    if (*maxlen < counter && counter <= rbound && counter >= lbound) {
       num = n;
       *maxlen = counter;
     }
