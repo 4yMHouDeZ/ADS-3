@@ -29,15 +29,15 @@ unsigned int seqCollatz(unsigned int *maxlen,
                         uint64_t rbound) {
   *maxlen = 0;
   uint64_t num, n;
-  for (uint64_t i = 2; i < 1000000; i++) {
+  for (uint64_t i = 2; i < 2000000; i++) {
     n = i;
     uint64_t counter = 1;
     while (n > 1) {
-      if (n % 2 == 0) n = n / 2;
+      if (n % 2 == 0) n /= 2;
       else n = 3 * n + 1;
       counter++;
     }
-    if (*maxlen < counter && counter <= rbound && counter >= lbound) {
+    if (*maxlen < counter && i <= rbound && i >= lbound) {
       num = i;
       *maxlen = counter;
     }
