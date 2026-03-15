@@ -28,10 +28,9 @@ unsigned int seqCollatz(unsigned int *maxlen,
                         uint64_t lbound,
                         uint64_t rbound) {
   *maxlen = 0;
-  uint64_t num, n;
+  uint64_t num;
   for (uint64_t i = 2; i < 2000000; i++) {
-    n = i;
-    uint64_t counter = 1;
+    uint64_t counter = 1, n = i;
     while (n > 1) {
       if (n % 2 == 0) n /= 2;
       else n = 3 * n + 1;
